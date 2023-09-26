@@ -1,0 +1,45 @@
+.footer-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  background-color: var(--colorPrimario);
+  border-top: 1px solid var(--colorSecundario);
+
+
+  a {
+    margin-right: 1rem;
+    grid-column: 2/3;
+    justify-self: center;
+    align-self: center;
+    text-decoration: none;
+    border: 1px solid var(--colorSecundario);
+    border-radius: 5%;
+    padding: 0.5rem 1rem;
+    color: white;
+    font-size: 2rem;
+    font-family: 'Poppins', sans-serif;
+  }
+}
+
+.logo-footer {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  grid-column: 1/2;
+  width: 8rem;
+  height: 8rem;
+  justify-self: center;
+  align-self: center;
+
+
+  img {
+    height: 90%;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .footer-container {
+    a {
+      font-size: 3rem;
+    }
+  }
+}

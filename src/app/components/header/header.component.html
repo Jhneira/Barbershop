@@ -1,0 +1,108 @@
+<div class="header-container">
+  <div class="logo-container">
+    <div class="logo-background"></div>
+    <div class="circle">
+      <img class="logo" src="../../../assets/logo.png" alt="logo">
+    </div>
+    <h1 class="name">BARBERÍA 68</h1>
+  </div>
+
+  <div class="nav-container">
+    <button class="menu-mobile" type="button"
+      (click)="openMenu()"
+      cdkOverlayOrigin #menuOverlay = 'cdkOverlayOrigin'>
+       <fa-icon [icon]="faBars"></fa-icon>
+    </button>
+
+    <div class="menu">
+      <div class="part1">
+
+        <a href="#inicio"
+          class="options"
+          [ngClass]="{'selected': sectionSelected === 'inicio'}"
+          (click) = "selectSection ('inicio')">
+          Inicio
+        </a>
+
+
+        <a href="#servicios"
+          class="options"
+          [ngClass]="{'selected': sectionSelected === 'servicios'}"
+          (click) = "selectSection ('servicios')">
+          Servicios
+        </a>
+
+      </div>
+      <div class="part2">
+
+        <a href="#equipo"
+          class="options equ"
+          [ngClass]="{'selected': sectionSelected === 'equipo'}"
+          (click) = "selectSection ('equipo')">
+           Equipo
+        </a>
+
+
+        <a href="#contacto"
+          class="options"
+          [ngClass]="{'selected': sectionSelected === 'contacto'}"
+          (click) = "selectSection ('contacto')">
+          Contacto
+        </a>
+
+      </div>
+
+
+    </div>
+
+    <ng-template cdkConnectedOverlay
+      [cdkConnectedOverlayOrigin]="menuOverlay"
+      [cdkConnectedOverlayOpen]="menuOpen">
+      <div class="options-container">
+        <a class="options close"
+          (click) = "openMenu()">X
+        </a>
+
+
+        <a href="#inicio"
+          class="options"
+          (click) = "showOption('inicio')">
+          Inicio
+        </a>
+
+
+
+         <a href="#servicios"
+          class="options"
+          (click) = "showOption('servicios')">
+           Servicios
+        </a>
+
+
+
+        <a href="#equipo"
+          class="options"
+          (click) = "showOption ('equipo')">
+           Equipo
+        </a>
+
+
+
+        <a href="#contacto"
+          class="options"
+          (click) = "showOption ('contacto')">
+          Contacto
+        </a>
+
+
+      </div>
+    </ng-template>
+
+    <div class="page">
+      {{ optionSelected$ | async | titlecase }}
+    </div>
+
+
+  </div>
+
+</div>

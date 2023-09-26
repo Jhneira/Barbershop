@@ -1,0 +1,119 @@
+<div class="main-container">
+  <div class="inicio" id="inicio" #pages>
+    <h1>Barbería diseñada para el hombre moderno</h1>
+    <h2>Estarás en manos de expertos. Bienvenido</h2>
+    <a href="https://wa.me/50766648931" target="_blank">Agenda tu Cita</a>
+  </div>
+
+  <div class="servicios"  id="servicios" #pages>
+    <h1 class="page-name"> Servicios</h1>
+    <div class="services-container">
+      <a class="services" (click)="showServices('cabeza')" [ngClass]="{'selected': currentServices === 'cabeza'}">Cabeza
+      </a>
+      <a class="services" (click)="showServices('cuerpo')" [ngClass]="{'selected': currentServices === 'cuerpo'}">Cuerpo
+      </a>
+      <a class="services" (click)="showServices('spa')" [ngClass]="{'selected': currentServices === 'spa'}">Spa
+      </a>
+
+      <div class="services-selected" [ngSwitch]="currentServices">
+        <div class="selected-container" *ngSwitchCase="'cabeza'">
+          <div  *ngFor="let service of headServices">
+            <h1>{{service.name}}</h1>
+            <h2>{{service.description}}</h2>
+          </div>
+        </div>
+
+        <div class="selected-container" *ngSwitchCase="'cuerpo'">
+          <div *ngFor="let service of bodyServices">
+            <h1>{{service.name}}</h1>
+            <h2>{{service.description}}</h2>
+          </div>
+        </div>
+
+        <div class="selected-container" *ngSwitchCase="'spa'">
+          <div *ngFor="let service of spaServices">
+            <h1>{{service.name}}</h1>
+            <h2>{{service.description}}</h2>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+  <div class="equipo"  id="equipo" #pages>
+    <h1 class="page-name"> Equipo</h1>
+    <div class="img-container">
+      <div class="image-mobile">
+        <img src="../../../assets/team.jpg" alt="team">
+      </div>
+      <div class="image-tablet">
+        <img src="../../../assets/team1080.png" alt="team">
+      </div>
+    </div>
+
+    <div class="team-description">
+      <h2> Este es nuestro equipo de expertos dispuestos a ofrecerte
+        la mejor asesoría y un excelente servicio.
+      </h2>
+      <h2>Nada mejor que estar en las mejores manos y acompañado de ese ser peludo
+        que tanto amor nos da, por eso somos una barbería Pet-Friendly.
+      </h2>
+      <h1>!Los Esperamos!</h1>
+    </div>
+
+  </div>
+
+  <div class="contacto"  id="contacto" #pages>
+    <h1 class="page-name"> Contacto</h1>
+    <div class="info-container">
+      <div class="location">
+        <fa-icon [icon]="faMapLocationDot"></fa-icon>
+        <h1>San Francisco</h1>
+      </div>
+      <div class="address">
+        <h2>Plaza 68, Calle 69 Este</h2>
+        <h2>San Francisco</h2>
+      </div>
+      <div class="phone">
+        <fa-icon [icon]="faPhone"></fa-icon>
+        <h2>6664-8931</h2>
+      </div>
+
+        <a class="social"
+          href="https://wa.me/50766648931" target="_blank">
+          <fa-icon [icon]="faWhatsapp"></fa-icon>
+          <h2>Agenda tu cita</h2>
+        </a>
+
+        <a class="social"
+        href="https://www.instagram.com/barberia68" target="_blank">
+        <fa-icon [icon]="faInstagram"></fa-icon>
+        <h2>Síguenos</h2>
+      </a>
+    </div>
+
+    <div class="hours">
+      <h1>Horario</h1>
+      <div class="days">
+        <h2>Lunes - Sábado</h2>
+        <h2>9 AM - 7 PM</h2>
+      </div>
+      <div class="days">
+        <h2>Domingo</h2>
+        <h2>CERRADO</h2>
+      </div>
+
+    </div>
+
+    <div class="map">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1605.8487503510446!2d-79.51117417201428!3d8.993968980652287!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8faca900be908b0b%3A0x85a9c4c17ab34bfe!2sBarberia%2068!5e0!3m2!1ses-419!2sco!4v1693433037799!5m2!1ses-419!2sco"
+        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+  </div>
+
+</div>
+
